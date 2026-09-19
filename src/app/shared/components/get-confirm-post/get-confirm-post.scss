@@ -1,0 +1,16 @@
+.dialog-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.warning-icon {
+    color: #C62828;
+}
+
+.dialog-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+}

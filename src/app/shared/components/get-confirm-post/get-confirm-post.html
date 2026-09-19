@@ -1,0 +1,13 @@
+<h2 mat-dialog-title class="dialog-title">
+    <mat-icon class="warning-icon">warning</mat-icon>
+    <span>Confirm Delete</span>
+</h2>
+<mat-dialog-content>
+    <p class="dialog-text">
+        Are You Sure you want to Remove this Post?
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onClose(false)">Cancel</button>
+    <button mat-raised-button color="warn" (click)="onClose(true)">Delete</button>
+</mat-dialog-actions>

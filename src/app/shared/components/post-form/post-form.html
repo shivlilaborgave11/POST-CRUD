@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <form #postform="ngForm" (ngSubmit)="onAdd()">
+            <div class="form-group">
+                <label for="title"><strong>Title*</strong></label>
+                <input ngModel required type="text" id="title" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="body"><strong>Content*</strong></label>
+                <textarea required ngModel name="body" rows="4" id="body" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="id"><strong>PostId*</strong></label>
+                <select required ngModel name="id" id="id" class="form-control">
+                    @for (val of [1,2,3,4,5,6,7,8,9,10]; track val) {
+                    <option [value]="val">
+                        {{val}}
+                    </option>
+                    }
+                </select>
+            </div>
+            @if (!isInEditMode) {
+            <button class="btn-block" mat-raised-button color="primary">Add Post</button>
+            }
+            @if (isInEditMode) {
+            <button class="btn-block" type="button" mat-raised-button color="primary" (click)="onUpdate()">Update
+                Post</button>
+            }
+            @if (isInEditMode) {
+            <button class="btn-block" type="button" mat-raised-button color="accent"
+                (click)="onCancel()">Cancel</button>
+            }
+        </form>
+
+    </div>
+</div>

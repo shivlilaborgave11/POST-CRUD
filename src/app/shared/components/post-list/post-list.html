@@ -1,0 +1,16 @@
+<mat-card class="post-body">
+    <mat-card-header>
+        <mat-card-title #tooltip="matTooltip" [matTooltip]="postObj.title">{{postObj.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="post-content mt-2">
+        <p>
+            {{postObj.body}}
+        </p>
+    </mat-card-content>
+    <mat-divider class="mt-2"></mat-divider>
+    <mat-card-actions class="post-actions d-flex justify-content-between">
+        <button (click)="onEdit()" class="edit-btn" mat-button><mat-icon>edit</mat-icon></button>
+        <button [disabled]="editObjId===postObj.id" (click)="onRemove()" class="delete-btn"
+            mat-button><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,38 @@
+.post-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+mat-card-content p {
+    line-height: 1.5;
+    color: #64748b
+}
+
+.delete-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.post-content {
+    flex-grow: 1;
+}
+
+.post-actions {
+    margin-top: auto;
+}
+
+.edit-btn {
+    color: #1565c0 !important;
+}
+
+.delete-btn {
+    color: #d32f2f !important;
+}
+
+mat-card-title {
+    color: #1e293b;
+    font-weight: 402;
+}

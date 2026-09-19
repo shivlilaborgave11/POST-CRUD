@@ -1,0 +1,15 @@
+<div #postFormSection class="row">
+    <div class="col-md-6 offset-md-3 mb-4">
+        <app-post-form (updateComplete)="onUpdateComplete()" (editCancel)="onEditCancel()"></app-post-form>
+    </div>
+</div>
+
+<div class="row">
+    @for (p1 of posts; track p1.id ) {
+    <div class="col-md-3 mb-4">
+        <app-post-list (editClick)="scrollToForm()" [postObj]="p1" [editObjId]="editObjId"
+            (editId)="onPostEdit($event)"></app-post-list>
+    </div>
+    }
+
+</div>
