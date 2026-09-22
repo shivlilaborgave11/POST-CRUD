@@ -23,6 +23,9 @@ export class PostDashboard {
     this._postService.fetchPosts().subscribe((posts) => {
       this.posts = posts
     });
+    this._postService.posts$.subscribe(p => {
+      this.posts = p;
+    })
   }
 
   scrollToForm() {

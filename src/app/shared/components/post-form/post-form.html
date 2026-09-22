@@ -1,23 +1,47 @@
 <div class="card">
     <div class="card-body">
+        <h5 class="alert alert-info">
+            {{isInEditMode?'Update Post':'Add Post'}}
+        </h5>
         <form #postform="ngForm" (ngSubmit)="onAdd()">
             <div class="form-group">
                 <label for="title"><strong>Title*</strong></label>
-                <input ngModel required type="text" id="title" name="title" class="form-control">
+                <input ngModel required type="text" #title="ngModel" id="title" name="title" class="form-control">
+                @if(title.touched&&title.hasError('required')){
+                <small class="text-danger"> required field!!!</small>
+                }
             </div>
             <div class="form-group">
                 <label for="body"><strong>Content*</strong></label>
-                <textarea required ngModel name="body" rows="4" id="body" class="form-control"></textarea>
+                <textarea required ngModel name="body" #body="ngModel" rows="4" id="body"
+                    class="form-control"></textarea>
+                @if(body.touched&&body.hasError('required')){
+                <small class="text-danger">required!!!</small>
+                }
             </div>
             <div class="form-group">
                 <label for="id"><strong>PostId*</strong></label>
-                <select required ngModel name="id" id="id" class="form-control">
+                <select required ngModel #id="ngModel" name="id" id="id" class="form-control">
                     @for (val of [1,2,3,4,5,6,7,8,9,10]; track val) {
                     <option [value]="val">
                         {{val}}
                     </option>
                     }
                 </select>
+                @if(id.touched&&id.hasError('required')){
+                <small class="text-danger">required!!!</small>
+                }
+            </div>
+            <div class="form-group">
+                <label for="status"><strong>Status</strong></label>
+                <select required ngModel name="status" #status="ngModel" class="form-control">
+                    <option value="" disabled>choose Status</option>
+                    <option value="active">Active</option>
+                    <option value="draft">Draft</option>
+                </select>
+                @if(status.touched&&status.hasError('required')){
+                <strong class="text-danger">required!!!</strong>
+                }
             </div>
             @if (!isInEditMode) {
             <button class="btn-block" mat-raised-button color="primary">Add Post</button>

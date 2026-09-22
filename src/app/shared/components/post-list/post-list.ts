@@ -9,12 +9,13 @@ import { Post } from '../../service/post';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GetConfirmPost } from '../get-confirm-post/get-confirm-post';
 import { Snackbar } from '../../service/snackbar';
+import { TitleCasePipe } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-post-list',
-  imports: [MatCardModule, MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule, TitleCasePipe],
   templateUrl: './post-list.html',
   styleUrl: './post-list.scss',
   standalone: true

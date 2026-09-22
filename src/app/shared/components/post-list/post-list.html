@@ -1,6 +1,17 @@
 <mat-card class="post-body">
-    <mat-card-header>
-        <mat-card-title #tooltip="matTooltip" [matTooltip]="postObj.title">{{postObj.title}}</mat-card-title>
+    <mat-card-header class="post-header">
+        <div class="title-row">
+            <mat-card-title #tooltip="matTooltip" [matTooltip]="postObj.title">
+                <span class="post-title">{{postObj.title}}</span>
+                <span class="post-status">
+                    <span class="status-dot" [class.active]="postObj.status==='active'"
+                        [class.draft]="postObj.status==='draft'"></span>
+                    <span class="status-text">
+                        {{postObj.status|titlecase}}
+                    </span>
+                </span>
+            </mat-card-title>
+        </div>
     </mat-card-header>
     <mat-card-content class="post-content mt-2">
         <p>

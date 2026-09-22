@@ -34,5 +34,59 @@ mat-card-content p {
 
 mat-card-title {
     color: #1e293b;
-    font-weight: 402;
+    font-weight: 401;
+}
+
+//status
+.post-header {
+    width: 100%;
+    padding: 10px;
+
+}
+
+.title-row {
+    width: 100%;
+}
+
+.title-row mat-card-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.post-status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    margin-top: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.post-title {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.active {
+    background-color: #2e7d32;
+}
+
+.status-dot.draft {
+    background-color: #ef6c00;
 }
