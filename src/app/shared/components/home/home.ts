@@ -16,7 +16,7 @@ import { Post } from '../../service/post';
 export class Home {
   private _postService = inject(Post)
   totalPosts = this._postService.posts.length;
-  activePosts = 7;
-  draftPosts = 3;
+  activePosts = this._postService.posts.filter(posts => posts.status === 'active').length;
+  draftPosts = this._postService.posts.filter(posts => posts.status === 'draft').length;
 
 }

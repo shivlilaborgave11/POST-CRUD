@@ -4,8 +4,11 @@
             <mat-card-title #tooltip="matTooltip" [matTooltip]="postObj.title">
                 <span class="post-title">{{postObj.title}}</span>
                 <span class="post-status">
-                    <span class="status-dot" [class.active]="postObj.status==='active'"
-                        [class.draft]="postObj.status==='draft'"></span>
+                    <span class="status-dot" [ngClass]="{
+                        'active':postObj.status==='active',
+                        'draft':postObj.status==='draft'
+                    }"></span>
+
                     <span class="status-text">
                         {{postObj.status|titlecase}}
                     </span>
